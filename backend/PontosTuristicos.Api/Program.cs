@@ -1,7 +1,9 @@
-using PontosTuristicos.Domain.Repositories;
-using PontosTuristicos.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 using PontosTuristicos.Infrastructure.Data;
+using PontosTuristicos.Domain.Repositories;
+using PontosTuristicos.Infrastructure.Repositories;
+using PontosTuristicos.Application.Interfaces;
+using PontosTuristicos.Application.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
