@@ -1,6 +1,24 @@
 @PontosTuristicos.Api_HostAddress = http://localhost:5063
 
-GET {{PontosTuristicos.Api_HostAddress}}/weatherforecast/
-Accept: application/json
+POST {{PontosTuristicos.Api_HostAddress}}/api/pontos-turisticos
+Content-Type: application/json
+
+{
+  "nome": "Cristo Redentor",
+  "descricao": "Monumento histórico no Rio de Janeiro",
+  "localizacao": "Parque Nacional da Tijuca",
+  "cidade": "Rio de Janeiro",
+  "estado": "RJ"
+}
 
 ###
+
+GET {{PontosTuristicos.Api_HostAddress}}/api/pontos-turisticos?page=1&pageSize=5
+
+###
+
+GET {{PontosTuristicos.Api_HostAddress}}/api/pontos-turisticos?searchTerm=cristo&page=1&pageSize=5
+
+###
+
+GET {{PontosTuristicos.Api_HostAddress}}/api/estados

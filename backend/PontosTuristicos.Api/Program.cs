@@ -13,6 +13,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddScoped<IPontoTuristicoRepository, PontoTuristicoRepository>();
+builder.Services.AddScoped<IPontoTuristicoService, PontoTuristicoService>();
 
 builder.Services.AddOpenApi();
 
