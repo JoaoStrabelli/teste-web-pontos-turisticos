@@ -4,6 +4,7 @@ using PontosTuristicos.Domain.Repositories;
 using PontosTuristicos.Infrastructure.Repositories;
 using PontosTuristicos.Application.Interfaces;
 using PontosTuristicos.Application.Services;
+using PontosTuristicos.Api.Middlewares;
 
 const string CorsPolicyName = "FrontendPolicy";
 
@@ -30,6 +31,8 @@ builder.Services.AddScoped<IPontoTuristicoService, PontoTuristicoService>();
 builder.Services.AddOpenApi();
 
 var app = builder.Build();
+
+app.UseMiddleware<ExceptionHandlingMiddleware>();
 
 if (app.Environment.IsDevelopment())
 {
