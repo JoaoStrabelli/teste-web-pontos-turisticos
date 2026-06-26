@@ -1,3 +1,5 @@
+using PontosTuristicos.Domain.Repositories;
+using PontosTuristicos.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 using PontosTuristicos.Infrastructure.Data;
 
@@ -7,6 +9,8 @@ builder.Services.AddControllers();
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddScoped<IPontoTuristicoRepository, PontoTuristicoRepository>();
 
 builder.Services.AddOpenApi();
 
