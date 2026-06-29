@@ -1,12 +1,9 @@
+import { RouterProvider } from "react-router-dom";
+import { router } from "./routes/AppRoutes";
 import "./styles/global.css";
 
 function App() {
-  return (
-    <main className="app-container">
-      <h1>Pontos Turísticos</h1>
-      <p>Aplicação para cadastro e listagem de pontos turísticos do país.</p>
-    </main>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
